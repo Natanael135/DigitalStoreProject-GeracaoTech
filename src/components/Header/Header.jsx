@@ -1,5 +1,5 @@
 import Logo from "../Logo/Logo.jsx";
-import cart from "../../assets/assets/icons/mini-cart.svg";
+import cart from "../../assets/icons/mini-cart.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
