@@ -11,13 +11,15 @@ const FooterContainer = styled.footer`
   background-color: darkgray;
   color: white;
   padding: 2rem;
+  font-size: 14px;
 `;
 
 const FooterTop = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
 
+  
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -61,7 +63,7 @@ const FooterBottom = styled.section`
 `;
 
 const InfoSection = styled.div`
-
+flex-wrap: wrap;
 
   h4 {
     margin-bottom: 1rem;
@@ -101,6 +103,7 @@ const InfoComponent = ({ title, links }) => (
 );
 
 const Footer = () => {
+  
   const infomações = [
     {
       title: "Informação",
