@@ -2,3 +2,4 @@
 
 ## Equipe
 Natanael Silveira de Melo
+Erik Lima do Nascimento
