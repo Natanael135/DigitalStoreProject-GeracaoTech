@@ -54,7 +54,7 @@ const CardList = ({ items }) => {
         <Card key={item.id}>
           <CardTitle>{item.title}</CardTitle>
           <CardPrice>{item.price}</CardPrice>
-          <CardLink href={item.link}>Saiba mais</CardLink>
+          <CardLink href={item.link}><CardLink src={item.img} /></CardLink>
         </Card>
       ))}
     </CardContainer>
