@@ -3,3 +3,5 @@
 ## Equipe
 - Natanael Silveira de Melo
 - Erik Lima do Nascimento
+- Matheus Ferreira Silva Rocha
+
