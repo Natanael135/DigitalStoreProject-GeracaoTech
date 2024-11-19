@@ -5,6 +5,7 @@ const HomePage = () => {
   return ( 
   <>
     <h1>conteudo principal</h1>
+    <h2>teste</h2>
     <Link to="/ListaProdutos">Produtos</Link>
     <Link to="/DetalhesProdutos">Detalhes Produtos</Link>
   </> 
