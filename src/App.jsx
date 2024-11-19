@@ -1,11 +1,10 @@
+import Paths from "./routes/Paths";
 
-import Header from "./components/Header/Header";
+
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <Paths/>
   );
 }
 

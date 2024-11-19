@@ -1,14 +1,23 @@
+import logoHeader from "../../assets/icons/logo-header.svg";
+import logoFooter from "../../assets/icons/logo-footer.svg";
+import styled from "styled-components";
 
-import logo from '../../assets/icons/logo-header.svg';
+const LogoContainer = styled.div`
+width: 253px;
+height:44px;
+`
 
 
-const Logo = () => {
+const Logo = ({tag}) => {
     return ( 
-        <>
+        <LogoContainer>
         <div className="logo">
-            <img src={logo} alt="logo" />
+            <img 
+            src={tag == 'Header' ? logoHeader : logoFooter}
+             alt="logo" 
+             />
         </div>
-        </>
+        </LogoContainer>
      );
 }
  

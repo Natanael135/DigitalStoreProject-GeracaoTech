@@ -1,1 +1,8 @@
-//criação da pagina
+const ProductViewPage  = () => {
+  return ( 
+    <>
+    </>
+   );
+}
+ 
+export default ProductViewPage ;
