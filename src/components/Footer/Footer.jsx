@@ -23,16 +23,14 @@ const FooterTop = styled.section`
     justify-content: space-between;
   }
 
-  > div {
-    flex: 1;
-  }
 `;
 
 const Description = styled.div`
-  p {
-    margin: 1rem;
+   p {
+    padding-top: 1rem;
   }
-  img{
+
+ img{
     @media (min-width: 768px) {
     width: 253px;
     height: 44px;
@@ -53,8 +51,7 @@ const SocialIcons = styled.nav`
   }
   a:hover {
     transform: scale(1.5);
-  }
-`;
+  }`;
 
 const Divider = styled.hr`
   border: none;
@@ -69,7 +66,6 @@ const FooterBottom = styled.section`
 `;
 
 const InfoSection = styled.div`
-
 
   h4 {
     margin-bottom: 1rem;
@@ -151,7 +147,7 @@ const Footer = () => {
           <Link to="/">
             <Logo tag="Logo-Footer" />
           </Link>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi dicta quam possimus rerum aliquam magni reprehenderit soluta doloribus ea exercitationem? Enim eius exercitationem harum maxime, ut repellat. Asperiores, esse ut?</p>
           <SocialIcons>
             <a href="https://www.facebook.com" aria-label="Facebook">
               <img src={iconFacebook} alt="Facebook" />
