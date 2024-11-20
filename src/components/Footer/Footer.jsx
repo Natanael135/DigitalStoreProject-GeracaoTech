@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
 
 const FooterTop = styled.section`
   display: flex;
-  flex-direction: column;
+ flex-flow: wrap;
   gap: 2rem;
 
   @media (min-width: 768px) {
@@ -32,6 +32,14 @@ const Description = styled.div`
   p {
     margin: 1rem;
   }
+  img{
+    @media (min-width: 768px) {
+    width: 253px;
+    height: 44px;
+  }
+  width: 138px;
+  height: 24px;
+}
 `;
 
 const SocialIcons = styled.nav`
@@ -39,12 +47,12 @@ const SocialIcons = styled.nav`
   gap: 1.5rem;
 
   a img {
-    width: 2rem;
-    height: 2rem;
+    width: 23px;
+    height: 18px;
     transition: transform 0.2s ease;
   }
   a:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
   }
 `;
 

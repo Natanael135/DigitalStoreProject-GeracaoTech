@@ -1,110 +1,303 @@
-
-import Logo from '../Logo/Logo'
-import cart from "../../assets/icons/mini-cart.svg"
 import styled from "styled-components";
-import "../../global.css"
-import search from "../../assets/icons/search.svg"
+import Logo from "../Logo/Logo";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import MiniCart from '../../assets/icons/mini-cart.svg';
+import SearchIcon from '../../assets/icons/search.svg';
 
-const Header = () => {
-  {
-    /*
-    import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+const HeaderWrapper = styled.header`
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 
-    const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
+  .logo img {
+    @media (min-width: 768px) {
+    width: 253px;
+    height: 44px;
+  }
+  width: 138px;
+  height: 24px;
+}
+`;
 
-  const handleSearch = (event) => {
-    if (event.key === "Enter" || event.type === "click") {
-      if (searchTerm.trim()) {
-        navigate(`/product?filter=${encodeURIComponent(searchTerm)}`);
-        setSearchTerm("");
+const HeaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+`;
+
+const TopHeader = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  @media (min-width: 768px) {
+    justify-content: space-around;
+  }
+`;
+
+const MenuIcon = styled.div`
+  display: flex;
+  font-size: 1.5rem;
+  color: #1F1F1F;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const Sidebar = styled.div`
+  position: fixed;
+  top: 0;
+  left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+
+  a {
+    text-decoration: none;
+    color: #474747;
+    font-weight: 400;
+    margin: 10px 0;
+
+    &:hover {
+      color: #c92071;
+      border-bottom: 3px solid #c92071;
+      border-radius: 1.5px;
+      width: fit-content;
+    }
+  }
+
+  .sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+`;
+
+const CloseIcon = styled.div`
+  font-size: 1.5rem;
+  color: #474747;
+  cursor: pointer;
+  align-self: flex-end;
+`;
+
+const LinksContainer = styled.nav`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: #474747;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        color: #c92071;
+        border-bottom: 3px solid #c92071;
+        border-radius: 1.5px;
       }
     }
-  };*/ 
   }
-  
+`;
 
-
-const HeaderContainer = styled.header`
-  width: 100%;
-  height:20vh;
+const SearchBar = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  background-color: #FFFFFF;
-  gap:8px;
-  & .inputfield{
-    position: relative; 
+  background-color: lightgray;
+  border-radius: 8px;
+  padding: 0 10px;
+  flex: auto;
 
-    & .search-input {
-      width: 709px;
-      height: 3rem;
-      font-size: 14px;
-      padding: 4px 14px;
-      background-color: var(--light-gray-3);
-      border: 0;
-      border-radius: 8px;
-      color:var(--dark-gray-3);
-    }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
-    & .search-button {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    right: 2%;
-    transform: translateY(-50%);
-    }
-    
-}
-
- & .entrar {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
+const SearchInput = styled.input`
+  flex: 1;
   height: 40px;
-  background-color: var(--primary);
-  border-radius: 4px;
-  color: var(--white);
-  font-size: 14px;
-  font-weight: bold;
-}
-& .cadastro{
-    color: var(--dark-gray-2);
-    &:hover{
-        text-decoration: underline;
-    }
-}
+  border: 0;
+  background: transparent;
+  padding: 0 10px;
+`;
 
-`
+const SearchButton = styled.button`
+  background-color: lightgray;
+  border: 0;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+`;
 
+const SignUpLink = styled(Link)`
+  margin-left: 20px;
+  text-decoration: underline;
+  color: #474747;
+
+  &:hover {
+    color: #991956;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const LoginButton = styled.button`
+  margin-left: 20px;
+  color: white;
+  background-color: #c92071;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: #991956;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const CartIcon = styled.a`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  .cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ee4266;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export default function Header() {
+  const [selectedLink, setSelectedLink] = useState("Home");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
-    <HeaderContainer>
-      <Logo tag="Header"/>
-      <div className="inputfield">
-        <input
-          className="search-input"
-          id="produto"
-          type="text"
-          placeholder="Pesquisar Produto..."
+    <HeaderWrapper>
+      <HeaderContainer>
+        <TopHeader>
+          <MenuIcon onClick={toggleSidebar}>
+            <FaBars />
+          </MenuIcon>
+          <Link to="/">
+            <Logo tag="Header" />
+          </Link>
+          <SearchBar>
+            <SearchInput type="text" placeholder="Pesquisar produto..." />
+            <SearchButton>
+              <img src={SearchIcon} alt="Botão Pesquisar" />
+            </SearchButton>
+          </SearchBar>
+          <SignUpLink to="/Cadastro">Cadastre-se</SignUpLink>
+          <Link to="/Login">
+            <LoginButton>Entrar</LoginButton>
+          </Link>
+          <CartIcon href="">
+            <img src={MiniCart} alt="mini-cart" />
+            <div className="cart-badge">1</div>
+          </CartIcon>
+        </TopHeader>
 
-        />
-        {/* <button className="search-button" onClick={handleSearch}>
-        </button> */}
-        <span className="search-button"  ><img src={search} alt="search-icon" /></span>
-      </div>
-      <a href="#" className="cadastro">Cadastre-se</a>
-      <a href="#" className="entrar">Entrar</a>
-      <div className="cart">
-        <img src={cart} alt="Carrinho de compras" />
-      </div>
-    </HeaderContainer>
+        <LinksContainer>
+          <Link
+            to="/"
+            className={selectedLink === "Home" ? "selected" : ""}
+            onClick={() => setSelectedLink("Home")}
+          >
+            Home
+          </Link>
+          <Link
+            to="/ProductListingPage"
+            className={selectedLink === "Produtos" ? "selected" : ""}
+            onClick={() => setSelectedLink("Produtos")}
+          >
+            Produtos
+          </Link>
+          <Link
+            to="/ProductViewPage"
+            className={selectedLink === "Categorias" ? "selected" : ""}
+            onClick={() => setSelectedLink("Categorias")}
+          >
+            Categorias
+          </Link>
+          <Link
+            to="/"
+            className={selectedLink === "Pedidos" ? "selected" : ""}
+            onClick={() => setSelectedLink("Pedidos")}
+          >
+            Meus Pedidos
+          </Link>
+        </LinksContainer>
+      </HeaderContainer>
+
+      <Sidebar isOpen={isSidebarOpen}>
+        <CloseIcon onClick={closeSidebar}>
+          <FaTimes />
+        </CloseIcon>
+        <h3>Páginas</h3>
+        <Link to="/">Home</Link>
+        <Link to="/ProductListingPage">Produtos</Link>
+        <Link to="/ProductViewPage">Categorias</Link>
+        <Link to="/">Meus Pedidos</Link>
+        <div className="sidebar-bottom">
+          <SignUpLink to="/">Cadastre-se</SignUpLink>
+          <Link to="/">
+            <LoginButton>Entrar</LoginButton>
+          </Link>
+        </div>
+      </Sidebar>
+    </HeaderWrapper>
   );
-};
-
-export default Header;
+}
