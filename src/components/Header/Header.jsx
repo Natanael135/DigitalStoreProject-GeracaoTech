@@ -16,12 +16,12 @@ const HeaderWrapper = styled.header`
 
   .logo img {
     @media (min-width: 768px) {
-    width: 253px;
-    height: 44px;
+      width: 253px;
+      height: 44px;
+    }
+    width: 138px;
+    height: 24px;
   }
-  width: 138px;
-  height: 24px;
-}
 `;
 
 const HeaderContainer = styled.div`
@@ -90,10 +90,20 @@ const Sidebar = styled.div`
   }
 
   .sidebar-bottom {
+    margin-left: 0;
     margin-top: auto;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row-reverse;
+    gap: 1px;
+    align-items: center;
+    
+  }
+
+  .sidebar-bottom a {
+    display: block;
+  }
+  &:hover{
+    border-bottom: none;
   }
 `;
 
@@ -132,7 +142,6 @@ const SearchBar = styled.div`
   align-items: center;
   background-color: lightgray;
   border-radius: 8px;
-  padding: 0 10px;
   flex: auto;
 
   @media (max-width: 768px) {
@@ -152,39 +161,7 @@ const SearchButton = styled.button`
   background-color: lightgray;
   border: 0;
   width: 50px;
-  height: 40px;
   cursor: pointer;
-`;
-
-const SignUpLink = styled(Link)`
-  margin-left: 20px;
-  text-decoration: underline;
-  color: #474747;
-
-  &:hover {
-    color: #991956;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const LoginButton = styled.button`
-  margin-left: 20px;
-  color: white;
-  background-color: #c92071;
-  border: 0;
-  border-radius: 8px;
-  padding: 10px 20px;
-
-  &:hover {
-    background-color: #991956;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const CartIcon = styled.a`
@@ -209,6 +186,47 @@ const CartIcon = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+`;
+
+const SignUpLink = styled(Link)`
+  text-decoration: underline;
+  color: #474747;
+
+  &:hover {
+    color: #991956;
+    margin-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const LoginButton = styled.button`
+  color: white;
+  background-color: #c92071;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: #991956;
+    border-bottom: 0px;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const HeaderButtons = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
   }
 `;
 
@@ -240,14 +258,17 @@ export default function Header() {
               <img src={SearchIcon} alt="Botão Pesquisar" />
             </SearchButton>
           </SearchBar>
-          <SignUpLink to="/Cadastro">Cadastre-se</SignUpLink>
-          <Link to="/Login">
-            <LoginButton>Entrar</LoginButton>
-          </Link>
           <CartIcon href="">
             <img src={MiniCart} alt="mini-cart" />
             <div className="cart-badge">1</div>
           </CartIcon>
+
+          <HeaderButtons>
+            <SignUpLink to="/Cadastro">Cadastre-se</SignUpLink>
+            <Link to="/Login">
+              <LoginButton>Entrar</LoginButton>
+            </Link>
+          </HeaderButtons>
         </TopHeader>
 
         <LinksContainer>
@@ -281,23 +302,23 @@ export default function Header() {
           </Link>
         </LinksContainer>
       </HeaderContainer>
-
       <Sidebar isOpen={isSidebarOpen}>
-        <CloseIcon onClick={closeSidebar}>
-          <FaTimes />
-        </CloseIcon>
-        <h3>Páginas</h3>
-        <Link to="/">Home</Link>
-        <Link to="/ProductListingPage">Produtos</Link>
-        <Link to="/ProductViewPage">Categorias</Link>
-        <Link to="/">Meus Pedidos</Link>
-        <div className="sidebar-bottom">
-          <SignUpLink to="/">Cadastre-se</SignUpLink>
-          <Link to="/">
-            <LoginButton>Entrar</LoginButton>
-          </Link>
-        </div>
-      </Sidebar>
+  <CloseIcon onClick={closeSidebar}>
+    <FaTimes />
+  </CloseIcon>
+  <h3>Páginas</h3>
+  <Link to="/" onClick={closeSidebar}>Home</Link>
+  <Link to="/ProductListingPage" onClick={closeSidebar}>Produtos</Link>
+  <Link to="/ProductViewPage" onClick={closeSidebar}>Categorias</Link>
+  <Link to="/" onClick={closeSidebar}>Meus Pedidos</Link>
+  <div className="sidebar-bottom">
+    <SignUpLink to="/Cadastro" onClick={closeSidebar}>Cadastre-se</SignUpLink>
+    <Link to="/Login" onClick={closeSidebar}>
+      <LoginButton>Entrar</LoginButton>
+    </Link>
+  </div>
+</Sidebar>
+
     </HeaderWrapper>
   );
 }
