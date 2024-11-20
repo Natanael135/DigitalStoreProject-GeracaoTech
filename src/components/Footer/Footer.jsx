@@ -8,7 +8,7 @@ import styled from "styled-components";
 // COMPONENTES PARA ESTRUTURAÇÃO: USAR ISSO PARA APLICAR A ESTILIZAÇÃO
 
 const FooterContainer = styled.footer`
-  background-color: darkgray;
+  background-color: #1F1F1F;
   color: white;
   padding: 2rem;
 `;
