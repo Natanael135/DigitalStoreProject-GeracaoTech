@@ -1,7 +1,3 @@
-import React from 'react';
-import styled from 'styled-components';
-
-// Styled Components
 const CardContainer = styled.div`
   display: flex;
   gap: 20px;
@@ -12,9 +8,8 @@ const CardContainer = styled.div`
 const Card = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 16px;
-  width: 200px;
-  text-align: center;
+  overflow: hidden;
+  width: 220px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 
@@ -23,14 +18,27 @@ const Card = styled.div`
   }
 `;
 
+const CardImage = styled.img`
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+`;
+
+const CardBody = styled.div`
+  padding: 16px;
+  text-align: center;
+`;
+
 const CardTitle = styled.h3`
   margin: 0 0 10px;
+  font-size: 1.2rem;
 `;
 
 const CardPrice = styled.p`
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   margin: 0 0 10px;
+  color: #333;
 `;
 
 const CardLink = styled.a`
@@ -40,6 +48,7 @@ const CardLink = styled.a`
   padding: 8px 12px;
   border-radius: 4px;
   display: inline-block;
+  transition: background-color 0.2s;
 
   &:hover {
     background-color: #0056b3;
@@ -52,9 +61,12 @@ const CardList = ({ items }) => {
     <CardContainer>
       {items.map((item) => (
         <Card key={item.id}>
-          <CardTitle>{item.title}</CardTitle>
-          <CardPrice>{item.price}</CardPrice>
-          <CardLink href={item.link}><CardLink src={item.img} /></CardLink>
+          <CardImage src={item.image} alt={item.title} />
+          <CardBody>
+            <CardTitle>{item.title}</CardTitle>
+            <CardPrice>{item.price}</CardPrice>
+            <CardLink href={item.link}>Saiba mais</CardLink>
+          </CardBody>
         </Card>
       ))}
     </CardContainer>
