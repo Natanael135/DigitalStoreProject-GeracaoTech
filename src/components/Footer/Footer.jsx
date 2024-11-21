@@ -22,12 +22,18 @@ const FooterTop = styled.section`
     flex-direction: row;
     justify-content: space-between;
   }
+    @media (min-width: 1200px) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+          }
+          
 
 `;
 
 const Description = styled.div`
    p {
     padding-top: 1rem;
+    max-width: 400px;
   }
 
  img{
