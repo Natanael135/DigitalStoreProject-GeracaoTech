@@ -87,7 +87,7 @@ const Sidebar = styled.div`
 
     &:hover {
       color: #c92071;
-      border-bottom: 3px solid #c92071;
+      
       border-radius: 1.5px;
       width: fit-content;
     }
@@ -132,8 +132,10 @@ const LinksContainer = styled.nav`
       font-size: 16px;
 
       &:hover {
+        font-weight: bold;
         color: #c92071;
-        border-bottom: 3px solid #c92071;
+        text-decoration: underline solid #c92071;
+        text-decoration-thickness: 3px;
         border-radius: 1.5px;
       }
     }
