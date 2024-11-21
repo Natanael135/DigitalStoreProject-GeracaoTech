@@ -87,7 +87,8 @@ const Sidebar = styled.div`
 
     &:hover {
       color: #c92071;
-      
+      text-decoration: underline solid #c92071;
+      text-decoration-thickness: 3px;
       border-radius: 1.5px;
       width: fit-content;
     }
