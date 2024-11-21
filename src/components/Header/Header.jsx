@@ -48,6 +48,10 @@ const TopHeader = styled.div`
   @media (min-width: 768px) {
     justify-content: space-around;
   }
+
+  @media (max-width: 768px) {
+    justify-content: space-between; /* Ajuste para exibir o logo e ícone corretamente */
+  }
 `;
 
 const MenuIcon = styled.div`
@@ -66,7 +70,7 @@ const Sidebar = styled.div`
   top: 0;
   left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   width: 250px;
-  height: 100%;
+  height: -webkit-fill-available;
   background-color: #ffffff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -96,13 +100,12 @@ const Sidebar = styled.div`
     flex-direction: row-reverse;
     gap: 1px;
     align-items: center;
-    
   }
 
   .sidebar-bottom a {
     display: block;
   }
-  &:hover{
+  &:hover {
     border-bottom: none;
   }
 `;
@@ -187,6 +190,10 @@ const CartIcon = styled.a`
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    display: block; /* Exibir o ícone no mobile */
+  }
 `;
 
 const SignUpLink = styled(Link)`
@@ -212,7 +219,6 @@ const LoginButton = styled.button`
 
   &:hover {
     background-color: #991956;
-    border-bottom: 0px;
   }
 
   @media (max-width: 768px) {
@@ -303,22 +309,21 @@ export default function Header() {
         </LinksContainer>
       </HeaderContainer>
       <Sidebar isOpen={isSidebarOpen}>
-  <CloseIcon onClick={closeSidebar}>
-    <FaTimes />
-  </CloseIcon>
-  <h3>Páginas</h3>
-  <Link to="/" onClick={closeSidebar}>Home</Link>
-  <Link to="/ProductListingPage" onClick={closeSidebar}>Produtos</Link>
-  <Link to="/ProductViewPage" onClick={closeSidebar}>Categorias</Link>
-  <Link to="/" onClick={closeSidebar}>Meus Pedidos</Link>
-  <div className="sidebar-bottom">
-    <SignUpLink to="/Cadastro" onClick={closeSidebar}>Cadastre-se</SignUpLink>
-    <Link to="/Login" onClick={closeSidebar}>
-      <LoginButton>Entrar</LoginButton>
-    </Link>
-  </div>
-</Sidebar>
-
+        <CloseIcon onClick={closeSidebar}>
+          <FaTimes />
+        </CloseIcon>
+        <p>Páginas</p>
+        <Link to="/" onClick={closeSidebar}>Home</Link>
+        <Link to="/ProductListingPage" onClick={closeSidebar}>Produtos</Link>
+        <Link to="/ProductViewPage" onClick={closeSidebar}>Categorias</Link>
+        <Link to="/" onClick={closeSidebar}>Meus Pedidos</Link>
+        <div className="sidebar-bottom">
+          <SignUpLink to="/Cadastro" onClick={closeSidebar}>Cadastre-se</SignUpLink>
+          <Link to="/Login" onClick={closeSidebar}>
+            <LoginButton>Entrar</LoginButton>
+          </Link>
+        </div>
+      </Sidebar>
     </HeaderWrapper>
   );
 }
