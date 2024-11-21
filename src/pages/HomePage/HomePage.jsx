@@ -8,6 +8,9 @@ import styled from "styled-components";
 import "../../global.css"
 import prevArrow from "../../assets/icons/arrow-left.svg"
 import nextArrow from "../../assets/icons/arrow-right.svg"
+import ProductCard from "../../components/ProductCard/card";
+import ProductListing from "../../components/ProductListing/ProductListing";
+import products from "../../components/products/products.json"
 
 const HomeContainer = styled.main`
 
@@ -91,6 +94,10 @@ const HomePage = () => {
         <Link to="/ListaProdutos">Produtos</Link>
         <Link to="/DetalhesProdutos">Detalhes Produtos</Link>
       </div>
+
+      {/* <ProductListing>
+      {products.map((products) => <ProductCard  name={products.name} image={products.image} price={products.price} priceDiscount={products.priceDiscount} key={products} />)} 
+      </ProductListing> */}
 
     </HomeContainer>
   );
