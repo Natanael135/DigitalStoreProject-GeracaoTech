@@ -123,8 +123,10 @@ const LinksContainer = styled.nav`
 
   @media (min-width: 768px) {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+        justify-content: center;
+        gap: 20px;
+        align-self: baseline;
+        padding: 40px 20px 29px 20px;
 
     a {
       text-decoration: none;
