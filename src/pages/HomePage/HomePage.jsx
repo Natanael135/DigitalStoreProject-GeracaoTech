@@ -34,6 +34,7 @@ const HomeContainer = styled.main`
     padding:30px 50px;
   }
 `
+
 const HomePage = () => {
 
   return ( 
@@ -95,9 +96,7 @@ const HomePage = () => {
         <Link to="/DetalhesProdutos">Detalhes Produtos</Link>
       </div>
 
-      {/* <ProductListing>
-      {products.map((products) => <ProductCard  name={products.name} image={products.image} price={products.price} priceDiscount={products.priceDiscount} key={products} />)} 
-      </ProductListing> */}
+      <ProductListing products={products} />
 
     </HomeContainer>
   );

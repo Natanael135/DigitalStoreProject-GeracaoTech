@@ -3,26 +3,29 @@ import styled from "styled-components";
 
 // Estilização com styled-components
 const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 292px;
+font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 `;
 
 const Image = styled.img`
-  width: 292px;
-  height: 321px;
-  object-fit: cover;
-  border-radius: 8px;
+display: flex;
+width: 292px;
+height: 321px;
+background: #FFFFFF;
+box-shadow: 6px 16px 30px rgba(105, 98, 98, 0.05);
+border-radius: 4px;
+background-image: url(../../img/produtosAlta/tenis.svg);
+background-repeat:no-repeat;
+background-position: 600% 40%;
 `;
 
 const Name = styled.h2`
-  font-size: 20px;
-  margin: 12px 0;
-  text-align: center;
+font-weight: 400;
+font-size: 24px;
+letter-spacing: 0.75px;
+color: #474747;
 `;
 
 const PriceContainer = styled.div`
