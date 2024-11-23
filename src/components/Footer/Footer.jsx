@@ -33,7 +33,7 @@ const FooterTop = styled.section`
 const Description = styled.div`
    p {
     padding-top: 1rem;
-    max-width: 400px;
+    max-width: 233px;
   }
 
  img{
@@ -72,6 +72,9 @@ const FooterBottom = styled.section`
 `;
 
 const InfoSection = styled.div`
+  p{
+    max-width: 233px;
+  }
 
   h4 {
     margin-bottom: 1rem;
@@ -111,7 +114,7 @@ const InfoComponent = ({ title, links }) => (
 );
 
 const Footer = () => {
-  const infomações = [
+  const informações = [
     {
       title: "Informação",
       links: [
@@ -166,7 +169,7 @@ const Footer = () => {
             </a>
           </SocialIcons>
         </Description>
-        {infomações.map((section, idx) => (
+        {informações.map((section, idx) => (
           section.links ? (
             <InfoComponent key={idx} title={section.title} links={section.links} />
           ) : (
