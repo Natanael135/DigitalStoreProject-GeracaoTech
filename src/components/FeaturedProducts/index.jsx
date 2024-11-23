@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom"; // Importando NavLink para navegação
 import blusa from "../../assets/blusa-destaque.png";
 import tenis from "../../assets/tenis-destaque.png";
 import fone from "../../assets/fone-destaque.png";
+import blusaIcon from "../../assets/icons/blusa-icon.svg";
+import calcaIcon from "../../assets/icons/calca-icon.svg";
+import boneIcon from "../../assets/icons/bone-icon.svg";
+import foneIcon from "../../assets/icons/fone-icon.svg";
+import tenisIcon from "../../assets/icons/sapato-icon.svg";
 
 const Section = styled.section`
   display: flex;
@@ -10,11 +16,11 @@ const Section = styled.section`
 `;
 
 const Title = styled.h1`
-font-size: 1.5rem;
-    font-weight: bold;
-    color: #1f1f1f;
-    letter-spacing: 0.046875rem;
-    margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f1f1f;
+  letter-spacing: 0.046875rem;
+  margin: 20px 0;
 `;
 
 const CardContainer = styled.div`
@@ -31,7 +37,6 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.article`
-  width: 100%;
   background-color: #dbe3f2;
   display: flex;
   flex-direction: row;
@@ -77,7 +82,6 @@ const Offer = styled.div`
 const CardTitle = styled.h2`
   font-size: 2rem;
   font-weight: bold;
-
 `;
 
 const Button = styled.a`
@@ -106,6 +110,50 @@ const CardImage = styled.img`
   max-width: 10rem;
   object-fit: contain;
   flex-shrink: 0;
+`;
+
+const FeaturedSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+`;
+
+const FeaturedTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+`;
+
+const IconItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+`;
+
+const Icon = styled.img`
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+  &:hover{
+    color: #c92071;
+    transform: scale(1.02);
+    filter: invert(18%) sepia(78%) saturate(5533%) hue-rotate(323deg) brightness(96%) contrast(99%);
+  }
+`;
+
+const IconText = styled.span`
+  font-size: 1rem;
+  font-weight: bold;
 `;
 
 const items = [
@@ -148,6 +196,33 @@ function FeaturedProducts() {
           </Card>
         ))}
       </CardContainer>
+
+      {/* Navegação semântica com styled-components */}
+      <FeaturedSection>
+        <FeaturedTitle>Itens em destaque</FeaturedTitle>
+        <IconContainer>
+          <IconItem>
+            <Icon src={blusaIcon} alt="Blusa" />
+            <IconText>Blusa</IconText>
+          </IconItem>
+          <IconItem>
+            <Icon src={calcaIcon} alt="Calça" />
+            <IconText>Calça</IconText>
+          </IconItem>
+          <IconItem>
+            <Icon src={boneIcon} alt="Boné" />
+            <IconText>Boné</IconText>
+          </IconItem>
+          <IconItem>
+            <Icon src={foneIcon} alt="Fone" />
+            <IconText>Fone</IconText>
+          </IconItem>
+          <IconItem>
+            <Icon src={tenisIcon} alt="Tênis" />
+            <IconText>Tênis</IconText>
+          </IconItem>
+        </IconContainer>
+      </FeaturedSection>
     </Section>
   );
 }
