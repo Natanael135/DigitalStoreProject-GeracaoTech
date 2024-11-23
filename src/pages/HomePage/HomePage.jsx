@@ -11,6 +11,7 @@ import nextArrow from "../../assets/icons/arrow-right.svg"
 import ProductCard from "../../components/ProductCard/card";
 import ProductListing from "../../components/ProductListing/ProductListing";
 import products from "../../components/products/products.json"
+import FeaturedProducts from "../../components/FeaturedProducts"
 
 const HomeContainer = styled.main`
 
@@ -77,20 +78,9 @@ const HomePage = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+
       <div className="main-content">
-        <Section title="Coleções em destaque" align="left">
-          <ul>
-            <li>
-              <img src={colection1} alt="" />
-            </li>
-            <li>
-              <img src={colection2} alt="" />
-            </li>
-            <li>
-              <img src={colection3} alt="" />
-            </li>
-          </ul>
-        </Section>
+        <FeaturedProducts/>
 
         <Link to="/ListaProdutos">Produtos</Link>
         <Link to="/DetalhesProdutos">Detalhes Produtos</Link>
