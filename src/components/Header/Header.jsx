@@ -75,7 +75,7 @@ const Sidebar = styled.div`
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   transition: left 0.3s ease-in-out;
   z-index: 1000;
 
@@ -106,6 +106,7 @@ const Sidebar = styled.div`
 
   .sidebar-bottom a {
     display: block;
+    text-decoration: none;
   }
   &:hover {
     border-bottom: none;
