@@ -70,7 +70,7 @@ const Sidebar = styled.div`
   top: 0;
   left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   width: 250px;
-  height: 100vh;
+  height: 100%;
   background-color: #fafafa;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
