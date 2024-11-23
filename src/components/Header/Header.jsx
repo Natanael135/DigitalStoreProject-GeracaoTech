@@ -97,11 +97,13 @@ const Sidebar = styled.div`
 
   .sidebar-bottom {
     margin-left: 0;
-    margin-top: auto;
+  
     display: flex;
     flex-direction: row-reverse;
     gap: 5px;
     align-items: center;
+    margin-inline-end: auto;
+    margin-block-start: auto;
   }
 
   .sidebar-bottom a {
