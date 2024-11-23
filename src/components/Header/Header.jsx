@@ -50,7 +50,7 @@ const TopHeader = styled.div`
   }
 
   @media (max-width: 768px) {
-    justify-content: space-between; /* Ajuste para exibir o logo e ícone corretamente */
+    justify-content: space-between;
   }
 `;
 
@@ -70,8 +70,8 @@ const Sidebar = styled.div`
   top: 0;
   left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   width: 250px;
-  height: -webkit-fill-available;
-  background-color: #ffffff;
+  height: 100vh;
+  background-color: #fafafa;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@ const Sidebar = styled.div`
     margin-top: auto;
     display: flex;
     flex-direction: row-reverse;
-    gap: 1px;
+    gap: 5px;
     align-items: center;
   }
 
