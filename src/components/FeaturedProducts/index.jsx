@@ -149,8 +149,8 @@ const IconItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 6rem;
+    height: 6rem;
     background-color: #ffffff;
     border-radius: 50%;
     cursor: auto;
@@ -160,7 +160,6 @@ const IconItem = styled.div`
 const Icon = styled.img`
   width: 50px;
   height: 50px;
-  margin-bottom: 0.5rem;
   &:hover{
     color: #c92071;
     transform: scale(1.02);
