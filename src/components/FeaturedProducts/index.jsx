@@ -83,7 +83,8 @@ const CardTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: bold;
   padding-top: 3rem;
-  
+  z-index: 1;
+
   @media screen and (min-width: 768px) {
     font-size: 2rem;
     padding-top: 0;
