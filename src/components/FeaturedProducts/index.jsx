@@ -82,6 +82,14 @@ const Offer = styled.div`
 const CardTitle = styled.h2`
   font-size: 2rem;
   font-weight: bold;
+  font-size: 1.6rem;
+    font-weight: bold;
+    padding-top: 3rem;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
+    padding-top: 0;
+}
+
 `;
 
 const Button = styled.a`
