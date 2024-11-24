@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom"; // Importando NavLink para navegação
+import { NavLink } from "react-router-dom";
 import blusa from "../../assets/blusa-destaque.png";
 import tenis from "../../assets/tenis-destaque.png";
 import fone from "../../assets/fone-destaque.png";
@@ -83,7 +83,6 @@ const CardTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: bold;
   padding-top: 3rem;
-  z-index: 1;
 
   @media screen and (min-width: 768px) {
     font-size: 2rem;
@@ -155,7 +154,9 @@ const Icon = styled.img`
   &:hover{
     color: #c92071;
     transform: scale(1.02);
-    filter: invert(18%) sepia(78%) saturate(5533%) hue-rotate(323deg) brightness(96%) contrast(99%);
+    filter: invert(23%) sepia(86%) saturate(2000%) hue-rotate(310deg) brightness(94%) contrast(92%);
+    cursor: pointer;
+
   }
 `;
 
@@ -205,7 +206,6 @@ function FeaturedProducts() {
         ))}
       </CardContainer>
 
-      {/* Navegação semântica com styled-components */}
       <FeaturedSection>
         <FeaturedTitle>Itens em destaque</FeaturedTitle>
         <IconContainer>
@@ -230,6 +230,7 @@ function FeaturedProducts() {
             <IconText>Tênis</IconText>
           </IconItem>
         </IconContainer>
+
       </FeaturedSection>
     </Section>
   );
