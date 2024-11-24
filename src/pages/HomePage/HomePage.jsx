@@ -14,7 +14,7 @@ import products from "../../components/products/products.json"
 import FeaturedProducts from "../../components/FeaturedProducts"
 
 const HomeContainer = styled.main`
-
+background-color: #F9F8FE;
 & ul{
   display: flex;
   flex-flow: row wrap;
@@ -80,10 +80,10 @@ const HomePage = () => {
       </div>
 
       <div className="main-content">
+
+        
         <FeaturedProducts/>
 
-        <Link to="/ListaProdutos">Produtos</Link>
-        <Link to="/DetalhesProdutos">Detalhes Produtos</Link>
       </div>
 
       <ProductListing products={products} />

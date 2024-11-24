@@ -145,6 +145,16 @@ const IconItem = styled.div`
   align-items: center;
   text-align: center;
   width: 120px;
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: auto;
+  }
 `;
 
 const Icon = styled.img`
@@ -210,23 +220,28 @@ function FeaturedProducts() {
         <FeaturedTitle>Itens em destaque</FeaturedTitle>
         <IconContainer>
           <IconItem>
-            <Icon src={blusaIcon} alt="Blusa" />
+            <a href=""><Icon src={blusaIcon} alt="Blusa" /></a>
+            
             <IconText>Blusa</IconText>
           </IconItem>
           <IconItem>
-            <Icon src={calcaIcon} alt="Calça" />
+            <a href=""> <Icon src={calcaIcon} alt="Calça" /></a>
+           
             <IconText>Calça</IconText>
           </IconItem>
           <IconItem>
-            <Icon src={boneIcon} alt="Boné" />
+            <a href=""><Icon src={boneIcon} alt="Boné" /></a>
+            
             <IconText>Boné</IconText>
           </IconItem>
           <IconItem>
-            <Icon src={foneIcon} alt="Fone" />
+            <a href=""><Icon src={foneIcon} alt="Fone" /></a>
+            
             <IconText>Fone</IconText>
           </IconItem>
           <IconItem>
-            <Icon src={tenisIcon} alt="Tênis" />
+            <a href=""><Icon src={tenisIcon} alt="Tênis" /></a>
+            
             <IconText>Tênis</IconText>
           </IconItem>
         </IconContainer>
