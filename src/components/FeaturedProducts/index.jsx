@@ -116,7 +116,7 @@ const FeaturedSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 0;
 `;
 
 const FeaturedTitle = styled.h2`
