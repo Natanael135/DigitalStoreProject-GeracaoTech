@@ -57,7 +57,8 @@ background-color: #F9F8FE;
 `
 const SpecialOffer = styled.section`
 width: 100%;
-
+background-color: #FFFFFF;
+padding: 24px 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
