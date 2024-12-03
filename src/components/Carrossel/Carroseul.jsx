@@ -18,6 +18,7 @@ const CarroseulContainer = styled.div`
 
 const Banner = styled.div`
 #banner{
+  height:480px;
   @media (min-width:1024px){
     padding: 80px 30px ;
 
