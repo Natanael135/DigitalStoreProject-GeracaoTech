@@ -15,9 +15,9 @@ import banner from "../../assets/banner/white-sneaker-nike.png"
 import ProductListing from "../../components/ProductListing/ProductListing";
 import products from "../../components/products/products.json"
 import FeaturedProducts from "../../components/FeaturedProducts"
-import svg from "../../assets/icons/Ellipse 11.svg"
-import specialOfferImg from "../../assets/banner/Laye 1.png"
+
 import Carroseul from "../../components/Carrossel/Carroseul.jsx";
+import SpecialOffer from "../../components/SpecialOffer/SpecialOffer.jsx";
 
 
 const LoginButton = styled.button`
@@ -55,65 +55,7 @@ background-color: #F9F8FE;
     padding:30px 50px;
   }
 `
-const SpecialOffer = styled.section`
-width: 100%;
-background-color: #FFFFFF;
-padding: 24px 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
 
-border:1px solid red;
-@media (min-width: 1024px){
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-& #specialOffer-overlay{
-  position: relative;
-  border:1px solid red;
-  width: 280px;
-  height: 280px;
-@media (min-width: 1024px){
-  width: 466px;
-  height: 466px;
-}
-
-   & #background-svg{
-    border:1px solid red;
-    width: 280px;
-    height: 280px;
-    @media (min-width: 1024px){
-    width: 466px;
-    height: 466px;
-  }
-    position: absolute;
-  }
-
-  & #overlay-shoes{
-    border:1px solid red;
-    top: 50%;
-    width : 301px;
-    height:173px;
-    position:absolute;
-    transform: translate(-6%, -50%);
-    @media (min-width:1024px){
-      width : 573px;
-      height:330px;
-      
-    }
-  }
- }
- & #specialOffer-text{
-  width: 360px;
-  height: 340px;
-  display: flex;
-  margin-top: 12px;
-  flex-direction: column;
-  align-content: center;
- }
-`
 
 const HomePage = () => {
 
@@ -129,20 +71,7 @@ const HomePage = () => {
       </div>
 
       <ProductListing products={products} />
-      <SpecialOffer>
-        <div id="specialOffer-overlay">
-        <img id="background-svg" src={svg} alt="" />
-        <div>
-          <img id="overlay-shoes" src={specialOfferImg} alt="" />
-        </div>
-        </div>
-        <div id="specialOffer-text">
-          <p>Oferta especial</p>
-          <h1>Air Jordan edição de colecionador</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum amet laboriosam autem ullam omnis deleniti voluptatem sit fugit odit quasi minima possimus ut sunt, ducimus atque pariatur vero facilis.</p>
-          <LoginButton>Ver Oferta</LoginButton>
-        </div>
-      </SpecialOffer>
+      <SpecialOffer/>
 
     </HomeContainer>
   );
