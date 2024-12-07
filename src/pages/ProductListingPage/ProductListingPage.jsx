@@ -6,9 +6,8 @@ import CloseIconImg from '../../assets/icons/close.svg'; // Importando o ícone 
 import ProductListing from '../../components/ProductListing/ProductListing';
 import products from '../../components/products/products.json';
 
-// Container principal
 const ProductListingContainer = styled.main`
-  background-color: rgba(249, 248, 254, 1);
+  background-color: #f9f8fe;
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
@@ -28,14 +27,13 @@ const Block = styled.section`
   }
 `;
 
-// Botão para ordenar
 const OrderButtonContainer = styled.div`
   width: 332px;
   height: 60px;
   font-size: 1rem;
   font-weight: 700;
   color: #474747;
-  background-color: rgba(249, 248, 254, 1);
+  background-color: #f9f8fe;
   border: 1px solid #474747;
   border-radius: 4px;
   display: flex;
@@ -101,7 +99,6 @@ const CardContainer = styled.div`
   justify-content: center;
 `;
 
-// Ícone de filtro (visível apenas em mobile)
 const FilterIcon = styled.button`
   display: none;
   background: transparent;
@@ -118,7 +115,6 @@ const FilterIcon = styled.button`
   }
 `;
 
-// Botão de fechar
 const CloseButton = styled.button`
   background: transparent;
   display: none;
@@ -159,18 +155,18 @@ const ProductListingPage = () => {
             <Select name="selecao" id="selecaoPrecos">
               <option value="1">Menor preço</option>
               <option value="2">Maior preço</option>
+              <option value="3">Mais vendidos</option>
+              <option value="4">Melhores avaliações</option>
             </Select>
           </OrderButtonContainer>
         </Block>
 
         <Block>
-          {/* Botão de filtro que aparece apenas no mobile */}
           <FilterIcon onClick={toggleMobileFilter}>
             <img src={FilterIconImg} alt="Filtro" />
           </FilterIcon>
 
           <FilterContainer showMobileFilter={showMobileFilter}>
-            {/* Botão de fechar */}
             <CloseButton onClick={closeMobileFilter}>
               <img src={CloseIconImg} alt="Fechar" />
             </CloseButton>
