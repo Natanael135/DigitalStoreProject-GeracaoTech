@@ -70,15 +70,14 @@ const FilterContainer = styled.aside`
   width: 308px;
   height: 720px;
   @media (max-width: 768px) {
-    position: fixed; /* Fixa o filtro na tela */
+    position: fixed;
+    height: 100%;
     top: 0;
-    left: 0; /* Mover para o canto esquerdo */
-    z-index: 20; /* Garantir que o filtro sobreponha outros elementos */
+    left: 0;
+    z-index: 20;
     transform: ${props =>
-      props.showMobileFilter
-        ? 'translateX(0)'
-        : 'translateX(-100%)'}; /* Transição para abrir/fechar */
-    transition: transform 0.3s ease-in-out; /* Suaviza a animação */
+      props.showMobileFilter ? 'translateX(0)' : 'translateX(-100%)'};
+    transition: transform 0.3s ease-in-out;
   }
 `;
 

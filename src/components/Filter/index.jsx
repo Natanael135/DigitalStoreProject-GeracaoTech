@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 const FilterOptions = styled.section`
-  padding-bottom: 1rem;
-  @media (min-width: 768px) {
-    padding-bottom: 2rem;
-  }
+  padding-bottom: 2rem;
 `;
 const Titulo = styled.div`
   color: #474747;
