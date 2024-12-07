@@ -110,8 +110,8 @@ const FilterIcon = styled.button`
   }
 
   img {
-    width: 32px;
-    height: 32px;
+    width: 60px;
+    height: 60px;
   }
 `;
 
