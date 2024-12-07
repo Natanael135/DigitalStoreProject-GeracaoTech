@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Filter from '../../components/Filter';
+import FilterIconImg from '../../assets/icons/filter.svg'; // Importando o ícone do filtro
+import CloseIconImg from '../../assets/icons/close.svg'; // Importando o ícone de fechar
 import ProductListing from '../../components/ProductListing/ProductListing';
 import products from '../../components/products/products.json';
 
+// Container principal
 const ProductListingContainer = styled.main`
   background-color: rgba(249, 248, 254, 1);
   display: flex;
@@ -24,6 +28,7 @@ const Block = styled.section`
   }
 `;
 
+// Botão para ordenar
 const OrderButtonContainer = styled.div`
   width: 332px;
   height: 60px;
@@ -64,6 +69,17 @@ const FilterContainer = styled.aside`
   padding: 2rem;
   width: 308px;
   height: 720px;
+  @media (max-width: 768px) {
+    position: fixed; /* Fixa o filtro na tela */
+    top: 0;
+    left: 0; /* Mover para o canto esquerdo */
+    z-index: 20; /* Garantir que o filtro sobreponha outros elementos */
+    transform: ${props =>
+      props.showMobileFilter
+        ? 'translateX(0)'
+        : 'translateX(-100%)'}; /* Transição para abrir/fechar */
+    transition: transform 0.3s ease-in-out; /* Suaviza a animação */
+  }
 `;
 
 const FilterTitle = styled.h2`
@@ -86,7 +102,52 @@ const CardContainer = styled.div`
   justify-content: center;
 `;
 
+// Ícone de filtro (visível apenas em mobile)
+const FilterIcon = styled.button`
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+// Botão de fechar
+const CloseButton = styled.button`
+  background: transparent;
+  display: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
 const ProductListingPage = () => {
+  const [showMobileFilter, setShowMobileFilter] = useState(false);
+
+  const toggleMobileFilter = () => {
+    setShowMobileFilter(!showMobileFilter);
+  };
+
+  const closeMobileFilter = () => {
+    setShowMobileFilter(false);
+  };
+
   return (
     <>
       <ProductListingContainer>
@@ -104,7 +165,17 @@ const ProductListingPage = () => {
         </Block>
 
         <Block>
-          <FilterContainer>
+          {/* Botão de filtro que aparece apenas no mobile */}
+          <FilterIcon onClick={toggleMobileFilter}>
+            <img src={FilterIconImg} alt="Filtro" />
+          </FilterIcon>
+
+          <FilterContainer showMobileFilter={showMobileFilter}>
+            {/* Botão de fechar */}
+            <CloseButton onClick={closeMobileFilter}>
+              <img src={CloseIconImg} alt="Fechar" />
+            </CloseButton>
+
             <FilterTitle>Filtrar por</FilterTitle>
             <Divider />
             <Filter title="Marca" inputType="checkbox" option="marca" />
@@ -112,6 +183,7 @@ const ProductListingPage = () => {
             <Filter title="Gênero" inputType="checkbox" option="gênero" />
             <Filter title="Estado" inputType="radio" option="estado" />
           </FilterContainer>
+
           <CardContainer>
             <ProductListing products={products} />
           </CardContainer>
