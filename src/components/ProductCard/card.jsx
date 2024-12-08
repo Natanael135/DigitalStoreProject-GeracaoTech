@@ -28,6 +28,20 @@ letter-spacing: 0.75px;
 color: #474747;
 `;
 
+const P = styled`
+font-weight: 400;
+font-size: 24px;
+letter-spacing: 0.75px;
+background-color: #f6aa1c;
+`;
+
+const subTitle = styled.p`
+font-weight: 35px;
+font-size: 24px;
+letter-spacing: 0.75px;
+color: #474747;
+`;
+
 const PriceContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,9 +66,11 @@ const PriceDiscount = styled.span`
 `;
 
 // Componente ProductCard
-const ProductCard = ({ image, name, price, priceDiscount }) => (
+const ProductCard = ({ image, name, price, priceDiscount, subTitle, percentageDiscount }) => (
   <Card>
     <Image src={image} alt={name} />
+    <percentageDiscount>{percentageDiscount}</percentageDiscount>
+    <subTitle>{subTitle}</subTitle>
     <Name>{name}</Name>
     <PriceContainer>
       {priceDiscount ? (

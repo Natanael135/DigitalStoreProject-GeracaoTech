@@ -1,46 +1,60 @@
 [
     {
-        "name": "Nome do produto 1",
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
         "image": "/sapato-card.png",
         "price": 200,
-        "priceDiscount": 149.9
+        "percentageDiscount": "30% OFF",
+        "priceDiscount": 100
     },
     {
-        "name": "Nome do produto 2",
-        "price": 49.9,
-        "image": "/sapato-card.png"    
-    },
-    {
-        "name": "Nome do produto 1",
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
         "image": "/sapato-card.png",
         "price": 200,
-        "priceDiscount": 149.9
+        "percentageDiscount": "30% OFF",
+        "priceDiscount": 100
     },
     {
-        "name": "Nome do produto 2",
-        "image": "/sapato-card.png",
-        "price": 49.9
-    },
-    {
-        "name": "Nome do produto 1",
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
         "image": "/sapato-card.png",
         "price": 200,
-        "priceDiscount": 149.9
+        "priceDiscount": 100
     },
     {
-        "name": "Nome do produto 2",
-        "image": "/sapato-card.png",
-        "price": 49.9
-    },
-    {
-        "name": "Nome do produto 1",
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
         "image": "/sapato-card.png",
         "price": 200,
-        "priceDiscount": 149.9
+        "priceDiscount": 100
     },
     {
-        "name": "Nome do produto 2",
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
         "image": "/sapato-card.png",
-        "price": 49.9
+        "price": 200,
+        "priceDiscount": 100
+    },
+    {
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
+        "image": "/sapato-card.png",
+        "price": 200,
+        "priceDiscount": 100
+    },
+    {
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
+        "image": "/sapato-card.png",
+        "price": 200,
+        "priceDiscount": 100
+    },
+    {
+        "name": "K-Swiss V8 - Masculino",
+        "subTitle": "Tênis",
+        "image": "/sapato-card.png",
+        "price": 200,
+        "priceDiscount": 100
     }
     ]

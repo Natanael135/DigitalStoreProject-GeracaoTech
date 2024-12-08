@@ -20,6 +20,8 @@ const ProductListing = ({ products }) => (
         name={product.name}
         price={product.price}
         priceDiscount={product.priceDiscount}
+        subTitle={product.subTitle}
+        percentageDiscount={product.percentageDiscount}
       />
     ))}
   </ListingContainer>
