@@ -3,6 +3,7 @@ import LayoutPage from "../layout/LayoutPage";
 import HomePage from "../pages/HomePage/HomePage";
 import ProductListingPage from "../pages/ProductListingPage/ProductListingPage";
 import ProductViewPage from "../pages/ProductViewPage/ProductViewPage";
+import ImageCarousel from "../components/Carrossel/ImageCarouseul";
 
 const Paths = () => {
   return ( 
@@ -14,6 +15,7 @@ const Paths = () => {
           <Route path="/ProductListingPage" element={<ProductListingPage/>}/>
           <Route path="/ProductViewPage" element={<ProductViewPage/>}/>
           <Route path="/Produto-detalhes/:id/:nome" element={<ProductViewPage/>}/>
+          <Route path="/teste" element={<ImageCarousel/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

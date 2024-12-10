@@ -1,52 +1,93 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import "./slick.css"
-import tenis1 from "../../assets/sapatos/download (5).jpg"
-import tenis2 from "../../assets/sapatos/download (6).jpg"
-import tenis3 from "../../assets/sapatos/download (8).jpg"
+import { useState } from "react";
+import sapato1 from "../../assets/sapatos/download (1).jpg"
+import sapato2 from "../../assets/sapatos/download (2).jpg"
+import sapato3 from "../../assets/sapatos/download (3).jpg"
+import sapato4 from "../../assets/sapatos/download (4).jpg"
+import styled from "styled-components";
+import prevArrow from "../../assets/icons/arrow-left.svg"
+import nextArrow from "../../assets/icons/arrow-right.svg"
 
-function ImageCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
+const ImageCarousel = () => {
+  let [ImagemIndex, SetImagem] = useState(0)
+  const imagens = [sapato1, sapato2, sapato3, sapato4]
 
-  const images = [
-    // Array com as URLs das imagens
-    tenis1,
-    tenis2,
-    tenis3,
-    // ...
-  ];
+  function nextImg(){
+    if(ImagemIndex < imagens.length-1){
+      
+      SetImagem(ImagemIndex+1)
+      console.log(imagens.length + "e" + ImagemIndex)
+    }
+  }
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    afterChange: (current) => setActiveIndex(current),
-  };
+  function prevImg(){
+    if(ImagemIndex > 0 ){
+      SetImagem(ImagemIndex-1)
+      console.log(imagens.length + "e" + ImagemIndex)
 
-  return (
-    <div>
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Imagem ${index + 1}`} />
-          </div>
-        ))}
-      </Slider>
-      <div className="preview-images">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Prévia ${index + 1}`}
-            className={index === activeIndex ? 'active' : ''}
-            onClick={() => slider.slickGoTo(index)}
-          />
-        ))}
+    }
+  }
+  function SetImg(id){
+    SetImagem(ImagemIndex = id)
+  }
+
+
+
+  const CarrosselContainer = styled.div`
+  & .MainImage{
+    position: relative;
+    & button{
+      border:0;
+      background: transparent;
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    
+  }
+  & .displayImg{
+    width:500px;
+    height: 500px;
+  }
+  & ul{
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    & li{
+      border: 0;
+
+    }
+  }
+  & .preview-image{
+    width: 80px;
+    height: 80px;
+    border: 0;
+    cursor: pointer;
+  }
+  `
+  return ( 
+    <CarrosselContainer>
+      <div className="MainImage">
+
+        <img className="displayImg" src={imagens[ImagemIndex]}/>
+        <button onClick={prevImg}><img src={prevArrow} alt="" /></button>
+        <button onClick={nextImg}><img src={nextArrow} alt="" /></button>
       </div>
-    </div>
-  );
+      <ul>
+        {
+          imagens.map((sapato, index)=>(
+            <li key={index}>
+              <img className="preview-image" 
+              src={sapato} 
+              alt="" 
+              onClick={()=> SetImg(index)}/>
+              </li>
+          ))
+        }
+      </ul>
+    </CarrosselContainer>
+   );
 }
 
+ 
 export default ImageCarousel;
+
