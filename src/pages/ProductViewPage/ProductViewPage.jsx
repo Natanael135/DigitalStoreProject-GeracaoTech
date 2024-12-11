@@ -3,12 +3,14 @@ import styled from "styled-components";
 import "../../global.css"
 import ProductListing from "../../components/ProductListing/ProductListing";
 import products from "../../components/products/products.json"
+import ImageCarousel from "../../components/Carrossel/ImageCarouseul";
+import Section from "../../components/Section";
 
 const ProductViewPage  = () => {
   const {id, nome} = useParams();
+
   const ProdutoContainer = styled.div`
-  padding:34px 80px;
-  border:1px solid red;
+  padding:12px 80px;
   & ul{ 
     padding: 0;
    & li{
@@ -16,9 +18,12 @@ const ProductViewPage  = () => {
     & a{
       text-decoration: none;
       color:var(--dark-gray-2);
+      font-weight:500;
+      font-size:14px;
     }
     & .Home{
       color:var(--dark-gray-1);
+      font-weight: 700;
     }
   }
 }
@@ -26,29 +31,22 @@ const ProductViewPage  = () => {
   display: flex;
 }
   `
-  const CarouseulContainer = styled.div`
-  width: 700px;
-  height: 571px;
-  border: 1px solid red;
-  `
 
   const ProductInfos = styled.section`
   width: 420px;
-  padding: 0px 22px ;
+  margin-left:40px;
   `
   return ( 
     <ProdutoContainer>
           <ul>
-      <li><Link className="Home">Home /</Link></li>
-      <li><Link> Produtos /</Link></li>
-      <li><Link> Tênis /</Link></li>
-      <li><Link> Nike /</Link></li>
-      <li><Link> {nome}</Link></li>
-    </ul>
+            <li><Link className="Home">Home /</Link></li>
+            <li><Link> Produtos /</Link></li>
+            <li><Link> Tênis /</Link></li>
+            <li><Link> Nike /</Link></li>
+            <li><Link> {nome}</Link></li>
+          </ul>
     <section className="Product-details">
-      <CarouseulContainer>
-
-      </CarouseulContainer>
+      <ImageCarousel/>
       <ProductInfos>
       <h1>{nome}</h1>
       <p>Casual | Nike | REF:38416711</p>
@@ -76,8 +74,10 @@ const ProductViewPage  = () => {
       </div>
       </ProductInfos>
     </section>
-    {/* usar componente section  */}
-    <ProductListing products={products} />
+
+    <Section title="Produtos relacionados" align="center" link="true">
+      <ProductListing products={products} />
+    </Section>
 
   </ProdutoContainer>
    );

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import MiniCart from '../../assets/icons/mini-cart.svg';
 import SearchIcon from '../../assets/icons/search.svg';
+import "../../global.css"
 
 const HeaderWrapper = styled.header`
   width: 100%;
@@ -153,7 +154,7 @@ const LinksContainer = styled.nav`
 const SearchBar = styled.div`
   display: flex;
   align-items: center;
-  background-color: lightgray;
+  background-color: var(--light-gray-3);
   border-radius: 8px;
   flex: auto;
 
@@ -168,10 +169,11 @@ const SearchInput = styled.input`
   border: 0;
   background: transparent;
   padding: 0 10px;
+
 `;
 
 const SearchButton = styled.button`
-  background-color: lightgray;
+  background-color: transparent;
   border: 0;
   width: 50px;
   cursor: pointer;

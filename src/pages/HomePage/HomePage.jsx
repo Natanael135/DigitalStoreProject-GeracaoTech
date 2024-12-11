@@ -69,8 +69,9 @@ const HomePage = () => {
         <FeaturedProducts/>
 
       </div>
-
-      <ProductListing products={products} />
+      <Section title="Produtos em alta" link="true">
+        <ProductListing products={products} />  
+      </Section>
       <SpecialOffer/>
 
     </HomeContainer>

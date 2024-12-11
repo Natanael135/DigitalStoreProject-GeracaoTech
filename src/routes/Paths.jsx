@@ -13,7 +13,7 @@ const Paths = () => {
         <Route path="/" element={<LayoutPage/>}>
           <Route index element={<HomePage/>}/>
           <Route path="/ProductListingPage" element={<ProductListingPage/>}/>
-          <Route path="/ProductViewPage" element={<ProductViewPage/>}/>
+          <Route path="/Produto-detalhes" element={<ProductViewPage/>}/>
           <Route path="/Produto-detalhes/:id/:nome" element={<ProductViewPage/>}/>
           <Route path="/teste" element={<ImageCarousel/>}/>
         </Route>
