@@ -1,25 +1,18 @@
-import { Link } from "react-router-dom";
-import colection1 from "../../assets/banner/collection-1.png"
-import colection2 from "../../assets/banner/collection-2.png"
-import colection3 from "../../assets/banner/collection-3.png"
-import banner1 from "../../assets/banner/airjordan.png"
+
 import Section from "../../components/Section";
 import styled from "styled-components";
 import "../../global.css"
 
-import prevArrow from "../../assets/icons/arrow-left.svg"
-import nextArrow from "../../assets/icons/arrow-right.svg"
-import ProductCard from "../../components/ProductCard/card";
-import banner from "../../assets/banner/white-sneaker-nike.png"
+
 
 import ProductListing from "../../components/ProductListing/ProductListing";
 import products from "../../components/products/products.json"
 import FeaturedProducts from "../../components/FeaturedProducts"
 
-import Carroseul from "../../components/Carrossel/Carroseul.jsx";
+
 import SpecialOffer from "../../components/SpecialOffer/SpecialOffer.jsx";
 import Gallery from "../../components/Carrossel/Gallery.jsx";
-import ImageCarousel from "../../components/Carrossel/ImageCarouseul.jsx";
+
 
 
 const LoginButton = styled.button`
@@ -67,7 +60,7 @@ const HomePage = () => {
   return ( 
     <HomeContainer>
 
-      <Gallery  width="100%" height="681px" />
+        <Gallery  width="100%" height="681px" />
       <div className="main-content">
 
         

@@ -28,7 +28,7 @@ const Banner = styled.div`
 
   & .bannerContent{
     margin: auto;
-    width: 85%;
+    width: 100%;
     height: 571px;
     display: flex;
     flex-flow:row-reverse wrap;

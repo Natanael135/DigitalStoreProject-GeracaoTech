@@ -2,7 +2,6 @@ import styled from "styled-components";
 import prevArrow from "../../assets/icons/arrow-left.svg"
 import nextArrow from "../../assets/icons/arrow-right.svg"
 
-
 import "../../global.css"
 import Banner1 from "./Banner1";
 import Banner2 from "./Banner2";

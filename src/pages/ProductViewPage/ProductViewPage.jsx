@@ -7,7 +7,7 @@ import Section from "../../components/Section";
 
 import RatingStars from "../../components/RatingStars";
 import Gallery from "../../components/Carrossel/Gallery";
-import whitestar from "../../assets/icons/Star-1.svg"
+import star from "../../assets/icons/Star-1.svg";
 
 const ProductViewPage  = () => {
 
@@ -67,7 +67,7 @@ const ProdutoContainer = styled.div`
     font-size: 16px;
     font-weight: 700;
 
-    &:focus{
+    &:focus {
       background-color: var(--primary);
       color:var(--white);
     }
@@ -78,7 +78,7 @@ const ProdutoContainer = styled.div`
     border-radius:99px;
     border:2px solid white;
     outline-width: 0px;
-    &:focus{
+    &:focus {
       outline-width: 1px;
       outline-style: solid;
     }
@@ -102,49 +102,49 @@ const ProdutoContainer = styled.div`
   width: 420px;
   height: 571px;
   margin-left:40px;
-  & .RatingStars{
-    display:flex;
-    align-items: center;
-    gap: 16px;
-  }
-  & .rating-note{
-    background-color:#FFB31F;
-    color:#FFFFFF;
-    border-radius:4px;
-    width: 63px;
-    height: 23px;
-    font-size:14px;
-    font-weight: 900;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    gap: 4px;
-  }
-  & .rating-avaliation{
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--light-gray);
-  }
-  & .description-text{
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--dark-gray-2);
-  }
-  & .price{
-    font-size:16px;
-    font-weight: 400;
-    & span{
-      font-size:32px;
-      font-weight: 900;
+    & .RatingStars{
+      display:flex;
+      align-items: center;
+      gap: 16px;
     }
-  }
-  & .Discount{
-    font-size: 16px;
-    font-weight: 400;
-    color:var(--light-gray-2);
-    text-decoration: line-through;
-    margin-left: 8px;
-  }
+    & .rating-note{
+      background-color:#FFB31F;
+      color:#FFFFFF;
+      border-radius:4px;
+      width: 63px;
+      height: 23px;
+      font-size:14px;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      gap: 4px;
+    }
+    & .rating-avaliation{
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--light-gray);
+    }
+    & .description-text{
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-gray-2);
+    }
+    & .price{
+      font-size:16px;
+      font-weight: 400;
+      & span{
+        font-size:32px;
+        font-weight: 900;
+      }
+    }
+    & .Discount{
+      font-size: 16px;
+      font-weight: 400;
+      color:var(--light-gray-2);
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
   `
 
   const produto= {
@@ -180,7 +180,7 @@ const ProdutoContainer = styled.div`
               <p className="product-category">{produto.categoria} | {produto.marca} | REF:{produto.referencia}</p>
               <div className="RatingStars">
                 <RatingStars rating={produto.nota} />
-                <span className="rating-note">{produto.nota }<img src={whitestar} alt="" /></span>
+                <span className="rating-note">{produto.nota }<img src={star} alt="" /></span>
                 <span className="rating-avaliation">( {produto.avaliacoes} avaliações )</span>
               </div>
             </div>
@@ -196,8 +196,8 @@ const ProdutoContainer = styled.div`
               <div>
                 <h6 className="subtitle">Tamanho</h6>
                 <ul>         
-                  {produto.tamanhos.map((tamanho)=>(
-                    <li><button className="number-buttons">{tamanho}</button></li>
+                  {produto.tamanhos.map((tamanho, index)=>(
+                    <li key={index}><button className="number-buttons">{produto.tamanhos[index]}</button></li>
                   ))}
                 </ul>
               </div>

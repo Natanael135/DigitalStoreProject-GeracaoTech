@@ -131,7 +131,7 @@ const LinksContainer = styled.nav`
         justify-content: center;
         gap: 20px;
         align-self: baseline;
-        padding: 20px;
+        padding:  20px;
 
     a {
       text-decoration: none;
@@ -305,7 +305,7 @@ export default function Header() {
             Produtos
           </Link>
           <Link
-            to="/ProductViewPage"
+            to="/product/1"
             className={selectedLink === "Categorias" ? "selected" : ""}
             onClick={() => setSelectedLink("Categorias")}
           >
