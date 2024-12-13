@@ -5,7 +5,7 @@ const Gallery = ({showthumbs, radius, width, height}) => {
     return ( 
         <>
         {
-            showthumbs == true?<ImageCarousel radius={radius} />: <Carroseul width={width} height={height}/>
+            showthumbs == true?<ImageCarousel radius={radius} showthumbs={showthumbs} />: <Carroseul width={width} height={height}/>
         }
         </>
      );

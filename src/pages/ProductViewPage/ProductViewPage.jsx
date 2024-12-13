@@ -2,14 +2,14 @@ import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import "../../global.css"
 import ProductListing from "../../components/ProductListing/ProductListing";
-import products from "../../components/products/products.json"
-import ImageCarousel from "../../components/Carrossel/ImageCarouseul";
+
 import Section from "../../components/Section";
-import star from "../../assets/icons/Path@2x.svg"
+
 import RatingStars from "../../components/RatingStars";
 import Gallery from "../../components/Carrossel/Gallery";
+import whitestar from "../../assets/icons/Star 1.Svg"
+
 const ProductViewPage  = () => {
-  const {id, nome} = useParams();
 
 const ProdutoContainer = styled.div`
   background-color: var(--light-gray-3);
@@ -67,7 +67,7 @@ const ProdutoContainer = styled.div`
     font-size: 16px;
     font-weight: 700;
 
-    &:active{
+    &:focus{
       background-color: var(--primary);
       color:var(--white);
     }
@@ -78,7 +78,7 @@ const ProdutoContainer = styled.div`
     border-radius:99px;
     border:2px solid white;
     outline-width: 0px;
-    &:active{
+    &:focus{
       outline-width: 1px;
       outline-style: solid;
     }
@@ -107,6 +107,44 @@ const ProdutoContainer = styled.div`
     align-items: center;
     gap: 16px;
   }
+  & .rating-note{
+    background-color:#FFB31F;
+    color:#FFFFFF;
+    border-radius:4px;
+    width: 63px;
+    height: 23px;
+    font-size:14px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 4px;
+  }
+  & .rating-avaliation{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--light-gray);
+  }
+  & .description-text{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-gray-2);
+  }
+  & .price{
+    font-size:16px;
+    font-weight: 400;
+    & span{
+      font-size:32px;
+      font-weight: 900;
+    }
+  }
+  & .Discount{
+    font-size: 16px;
+    font-weight: 400;
+    color:var(--light-gray-2);
+    text-decoration: line-through;
+    margin-left: 8px;
+  }
   `
 
   const produto= {
@@ -116,7 +154,7 @@ const ProdutoContainer = styled.div`
       referencia:87094321,
       nota:3.5,
       avaliacoes:70,
-      preco:2000.00,
+      preco:"219,00",
       desconto:1899.00,
       descricao:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae unde ratione tempore voluptatum enim voluptatibus,",
       tamanhos:[39,40,41,42,43],
@@ -134,7 +172,7 @@ const ProdutoContainer = styled.div`
             <li><Link> {produto.nome}</Link></li>
           </ul>
     <section className="Product-details">
-      <Gallery radius="4px" showthumbs={true}/>
+      <Gallery radius="4px" width="700px" height="571px" showthumbs={true}/>
 
           <ProductInfos>
             <div>
@@ -142,11 +180,14 @@ const ProdutoContainer = styled.div`
               <p className="product-category">{produto.categoria} | {produto.marca} | REF:{produto.referencia}</p>
               <div className="RatingStars">
                 <RatingStars rating={produto.nota} />
-                <span>{produto.nota}</span>
-                <span>`({produto.avaliacoes} avaliações )`</span>
+                <span className="rating-note">{produto.nota }<img src={whitestar} alt="" /></span>
+                <span className="rating-avaliation">( {produto.avaliacoes} avaliações )</span>
               </div>
             </div>
-            <h3>R$<strong>219,</strong>00</h3>
+            <div>
+              <span className="price">R$<span>{produto.preco}</span></span>
+              <span className="Discount">R$219,00</span>
+            </div>
             <div>
               <h6 className="subtitle">Descrição do produto</h6>
               <p className="description-text">{produto.descricao}</p>

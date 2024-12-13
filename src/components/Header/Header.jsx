@@ -131,7 +131,7 @@ const LinksContainer = styled.nav`
         justify-content: center;
         gap: 20px;
         align-self: baseline;
-        padding: 40px 20px 29px 20px;
+        padding: 20px;
 
     a {
       text-decoration: none;

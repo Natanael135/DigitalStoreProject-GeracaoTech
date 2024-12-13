@@ -19,6 +19,7 @@ import FeaturedProducts from "../../components/FeaturedProducts"
 import Carroseul from "../../components/Carrossel/Carroseul.jsx";
 import SpecialOffer from "../../components/SpecialOffer/SpecialOffer.jsx";
 import Gallery from "../../components/Carrossel/Gallery.jsx";
+import ImageCarousel from "../../components/Carrossel/ImageCarouseul.jsx";
 
 
 const LoginButton = styled.button`
@@ -66,7 +67,7 @@ const HomePage = () => {
   return ( 
     <HomeContainer>
 
-      <Gallery radius="4px" width="100%" height="681px"/>
+      <Gallery  width="100%" height="681px" />
       <div className="main-content">
 
         

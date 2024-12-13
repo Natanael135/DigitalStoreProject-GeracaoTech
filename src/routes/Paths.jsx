@@ -15,8 +15,8 @@ const Paths = () => {
           <Route index element={<HomePage/>}/>
           <Route path="/ProductListingPage" element={<ProductListingPage/>}/>
           <Route path="/Produto-detalhes" element={<ProductViewPage/>}/>
-          <Route path="/Produto-detalhes/:id/:nome" element={<ProductViewPage/>}/>
-          <Route path="/teste" element={<Gallery radius="4px" width="100%" height="681px"/>}/>
+          <Route path="/product/:id" element={<ProductViewPage/>}/>
+          <Route path="/teste" element={<ImageCarousel  radius="4px" width="100%" height="681px"/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
