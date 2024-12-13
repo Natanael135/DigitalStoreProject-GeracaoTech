@@ -7,6 +7,7 @@ import ImageCarousel from "../../components/Carrossel/ImageCarouseul";
 import Section from "../../components/Section";
 import star from "../../assets/icons/Path@2x.svg"
 import RatingStars from "../../components/RatingStars";
+import Gallery from "../../components/Carrossel/Gallery";
 const ProductViewPage  = () => {
   const {id, nome} = useParams();
 
@@ -133,7 +134,7 @@ const ProdutoContainer = styled.div`
             <li><Link> {produto.nome}</Link></li>
           </ul>
     <section className="Product-details">
-      <ImageCarousel/>
+      <Gallery radius="4px" showthumbs={true}/>
 
           <ProductInfos>
             <div>

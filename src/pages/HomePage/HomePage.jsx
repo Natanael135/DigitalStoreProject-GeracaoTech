@@ -18,6 +18,7 @@ import FeaturedProducts from "../../components/FeaturedProducts"
 
 import Carroseul from "../../components/Carrossel/Carroseul.jsx";
 import SpecialOffer from "../../components/SpecialOffer/SpecialOffer.jsx";
+import Gallery from "../../components/Carrossel/Gallery.jsx";
 
 
 const LoginButton = styled.button`
@@ -54,6 +55,9 @@ background-color: #F9F8FE;
   & .main-content{
     padding:30px 50px;
   }
+  & .products{
+    margin: 0 20px;
+  }
 `
 
 
@@ -61,17 +65,21 @@ const HomePage = () => {
 
   return ( 
     <HomeContainer>
-      <Carroseul/>
 
+      <Gallery radius="4px" width="100%" height="681px"/>
       <div className="main-content">
 
         
-        <FeaturedProducts/>
+        
 
+          <FeaturedProducts/>
+        
+
+        <Section title="Produtos em alta" link="true">
+          <ProductListing products={products} />  
+        </Section>
       </div>
-      <Section title="Produtos em alta" link="true">
-        <ProductListing products={products} />  
-      </Section>
+
       <SpecialOffer/>
 
     </HomeContainer>

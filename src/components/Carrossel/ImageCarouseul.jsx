@@ -4,7 +4,7 @@ import styled from "styled-components";
 import prevArrow from "../../assets/icons/arrow-left.svg"
 import nextArrow from "../../assets/icons/arrow-right.svg"
 
-const ImageCarousel = () => {
+const ImageCarousel = ({radius}) => {
   let [ImagemIndex, SetImagem] = useState(0)
   const imagens = [
     {
@@ -93,19 +93,22 @@ const ImageCarousel = () => {
       height: 96px;
       border: 0;
       position: relative;
-      border-radius: 8px;
       cursor: pointer;
+      & .preview-image{
+        object-fit: contain;
+        width: 83px;
+        height: 41px;
+        border: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
     }
   }
-  & .preview-image{
-    object-fit: contain;
-    width: 83px;
-    height: 41px;
-    border: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  & .thumbnail-list{
+    width:700px;
+    padding: 0;
   }
   `
 
@@ -116,10 +119,10 @@ const ImageCarousel = () => {
         <img className="displayImg" src={imagens[ImagemIndex].sapato} />
         <button className="next"onClick={nextImg}><img src={nextArrow} alt="" /></button>
       </div>
-      <ul>
+      <ul className="thumbnail-list">
         {
           imagens.map((sapato, index)=>(
-            <li key={index} style={{backgroundColor:`#${sapato.background}`}} onClick={()=> SetImg(index)}>
+            <li key={index} style={{backgroundColor:`#${sapato.background}`, borderRadius:`${radius}`}} onClick={()=> SetImg(index)}>
               <img className="preview-image" 
               src={sapato.sapato} 
               alt="" 

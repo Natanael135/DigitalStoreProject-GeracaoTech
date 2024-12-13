@@ -9,8 +9,9 @@ import calcaIcon from "../../assets/icons/calca-icon.svg";
 import boneIcon from "../../assets/icons/bone-icon.svg";
 import foneIcon from "../../assets/icons/fone-icon.svg";
 import tenisIcon from "../../assets/icons/sapato-icon.svg";
+import Section from "../Section";
 
-const Section = styled.section`
+const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
 `;
@@ -200,23 +201,30 @@ const items = [
 
 function FeaturedProducts() {
   return (
-    <Section>
-      <Title>Coleções em destaque</Title>
-      <CardContainer>
-        {items.map((item) => (
-          <Card key={item.id}>
-            <Offer>{item.offer}</Offer>
-            <CardInfo>
-              <CardTitle>{item.title}</CardTitle>
-              <Button href="#">Comprar</Button>
-            </CardInfo>
-            <CardImage src={item.image} alt={item.alt} />
-          </Card>
-        ))}
-      </CardContainer>
+    <SectionContainer>
+      {/* <Title>Coleções em destaque</Title> */}
+
+      <Section title="Itens em destaque" textAlign="center">
+        <CardContainer>
+          {items.map((item) => (
+            <Card key={item.id}>
+              <Offer>{item.offer}</Offer>
+              <CardInfo>
+                <CardTitle>{item.title}</CardTitle>
+                <Button href="#">Comprar</Button>
+              </CardInfo>
+              <CardImage src={item.image} alt={item.alt} />
+            </Card>
+          ))}
+        </CardContainer>
+      </Section>
+
+      
+
 
       <FeaturedSection>
-        <FeaturedTitle>Itens em destaque</FeaturedTitle>
+        <Section title="Coleções em destaque" textAlign="center">
+        {/* <FeaturedTitle>Itens em destaque</FeaturedTitle> */}
         <IconContainer>
           <IconItem>
             <a href=""><Icon src={blusaIcon} alt="Blusa" /></a>
@@ -225,7 +233,7 @@ function FeaturedProducts() {
           </IconItem>
           <IconItem>
             <a href=""> <Icon src={calcaIcon} alt="Calça" /></a>
-           
+          
             <IconText>Calça</IconText>
           </IconItem>
           <IconItem>
@@ -245,8 +253,11 @@ function FeaturedProducts() {
           </IconItem>
         </IconContainer>
 
+        </Section>
       </FeaturedSection>
-    </Section>
+
+
+    </SectionContainer>
   );
 }
 
