@@ -7,7 +7,7 @@ import Section from "../../components/Section";
 
 import RatingStars from "../../components/RatingStars";
 import Gallery from "../../components/Carrossel/Gallery";
-import whitestar from "../../assets/icons/Star 1.Svg"
+import whitestar from "../../assets/icons/Star-1.Svg"
 
 const ProductViewPage  = () => {
 
