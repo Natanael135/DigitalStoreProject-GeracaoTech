@@ -2,6 +2,7 @@ import styled from "styled-components";
 import banner from "../../assets/banner/white-sneaker-nike.png"
 import svg from "../../assets/icons/Ornament 11.png"
 import "../../global.css"
+import { useNavigate } from "react-router-dom";
 
 const LoginButton = styled.button`
   color: white;
@@ -27,7 +28,7 @@ const Banner = styled.div`
   height: 571px;
 
   & .bannerContent{
-    border:1px solid red;
+
     margin-top: 14px;
     width: 100%;
     height: 571px;
@@ -49,6 +50,7 @@ const Banner = styled.div`
       font-size: 64px;
       font-weight: 700;
       color:var(--dark-gray);
+      line-height:66px;
       }
       & .subtitle{
         color:#FFB31F;
@@ -102,7 +104,7 @@ const Banner = styled.div`
 }
 `
 const Banner1 = () => {
-
+  let navigate = useNavigate();
     return ( 
        <Banner>
             <div className="bannerContent">
@@ -114,7 +116,7 @@ const Banner1 = () => {
                 <p className="subtitle">Melhores ofertas personalizadas</p>
                 <h1 className="title">Queima de estoque Nike🔥</h1>
                 <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam exercitationem doloribus </p>
-                <LoginButton>Ver Ofertas</LoginButton>
+                <LoginButton onClick={()=> navigate("/products")}>Ver Ofertas</LoginButton>
                 </div>
             </div>
        </Banner>
