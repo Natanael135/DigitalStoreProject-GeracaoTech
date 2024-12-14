@@ -87,7 +87,7 @@ const Banner2 = () => {
           position:absolute ;
           width: 700px;
           height: 700px;
-          transform: translate(-14%, -12.5%) rotate(-5deg);
+          transform: translate(-14%, -8%) rotate(-5deg);
       }
     }
   }

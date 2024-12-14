@@ -112,7 +112,7 @@ let navigate = useNavigate();
                 </div>
                 <div id="bannerInfos">
                 <p className="subtitle">Promoções de até 50%</p>
-                <h1 className="title">Ofertas festivas.</h1>
+                <h1 className="title">Ofertas relâmpago.⚡</h1>
                 <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam exercitationem doloribus </p>
                 <LoginButton onClick={()=> navigate("/products")}>Ver produtos </LoginButton>
                 </div>
