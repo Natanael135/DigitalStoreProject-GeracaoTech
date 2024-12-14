@@ -298,7 +298,7 @@ export default function Header() {
             Home
           </Link>
           <Link
-            to="/ProductListingPage"
+            to="/Products"
             className={selectedLink === "Produtos" ? "selected" : ""}
             onClick={() => setSelectedLink("Produtos")}
           >
@@ -326,8 +326,8 @@ export default function Header() {
         </CloseIcon>
         <p>Páginas</p>
         <Link to="/" onClick={closeSidebar}>Home</Link>
-        <Link to="/ProductListingPage" onClick={closeSidebar}>Produtos</Link>
-        <Link to="/ProductViewPage" onClick={closeSidebar}>Categorias</Link>
+        <Link to="//Products" onClick={closeSidebar}>Produtos</Link>
+        <Link to="/Product/1" onClick={closeSidebar}>Categorias</Link>
         <Link to="/" onClick={closeSidebar}>Meus Pedidos</Link>
         <div className="sidebar-bottom">
           <SignUpLink to="/Cadastro" onClick={closeSidebar}>Cadastre-se</SignUpLink>
