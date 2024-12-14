@@ -2,12 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import ProductCard from "../../components/ProductCard/card";
 
-// Estilização do contêiner
 const ListingContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards lado a lado no desktop */
+  gap: 10px;
   justify-content: center;
+  padding: 10px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards lado a lado em telas intermediárias */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards lado a lado no mobile */
+  }
 `;
 
 // Componente ProductListing
