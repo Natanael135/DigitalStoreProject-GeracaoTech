@@ -27,7 +27,8 @@ const Banner = styled.div`
   height: 571px;
 
   & .bannerContent{
-    margin: auto;
+    border:1px solid red;
+    margin-top: 14px;
     width: 100%;
     height: 571px;
     display: flex;

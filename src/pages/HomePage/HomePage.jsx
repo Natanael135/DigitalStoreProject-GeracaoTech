@@ -1,9 +1,8 @@
-
-import Section from "../../components/Section";
 import styled from "styled-components";
 import "../../global.css"
 
 
+import Section from "../../components/Section";
 
 import ProductListing from "../../components/ProductListing/ProductListing";
 import products from "../../components/products/products.json"
@@ -15,6 +14,7 @@ import Gallery from "../../components/Carrossel/Gallery.jsx";
 
 
 
+const HomePage = () => {
 const LoginButton = styled.button`
   color: white;
   background-color: #c92071;
@@ -55,21 +55,20 @@ background-color: #F9F8FE;
 `
 
 
-const HomePage = () => {
-
+  const link ={
+    "text": "Ver todos",
+    "href": "/products"
+  }
+  
   return ( 
     <HomeContainer>
 
         <Gallery  width="100%" height="681px" />
       <div className="main-content">
 
-        
-        
-
           <FeaturedProducts/>
         
-
-        <Section title="Produtos em alta" link="true">
+        <Section title="Produtos em alta" link={link}>
           <ProductListing products={products} />  
         </Section>
       </div>

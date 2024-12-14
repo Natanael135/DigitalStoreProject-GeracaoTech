@@ -135,9 +135,11 @@ const FeaturedTitle = styled.h2`
 
 const IconContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  @media(max-width:768px){
+    overflow-x:scroll;
+  }
 `;
 
 const IconItem = styled.div`
@@ -204,7 +206,7 @@ function FeaturedProducts() {
     <SectionContainer>
       {/* <Title>Coleções em destaque</Title> */}
 
-      <Section title="Itens em destaque" textAlign="center">
+      <Section title="Itens em destaque" textAlign="center" link="">
         <CardContainer>
           {items.map((item) => (
             <Card key={item.id}>
@@ -223,7 +225,7 @@ function FeaturedProducts() {
 
 
       <FeaturedSection>
-        <Section title="Coleções em destaque" textAlign="center">
+        <Section title="Coleções em destaque" textAlign="center" link="">
         {/* <FeaturedTitle>Itens em destaque</FeaturedTitle> */}
         <IconContainer>
           <IconItem>
