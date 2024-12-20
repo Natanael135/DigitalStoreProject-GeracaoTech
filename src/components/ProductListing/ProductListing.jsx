@@ -3,33 +3,36 @@ import styled from "styled-components";
 import ProductCard from "../../components/ProductCard/card";
 
 const ListingContainer = styled.div`
-  display: grid;
-  grid-template-columns: 23% 23% 23% 23%; /* 4 cards lado a lado no desktop */
-  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards lado a lado no mobile */
+    justify-content: space-between; /* Ajusta o alinhamento para mobile */
   }
 `;
 
 // Componente ProductListing
-const ProductListing = ({ products, width, gap }) => (
+const ProductListing = ({ products, width, gap }) => {
+  // Limita o número de produtos a 8
+  const limitedProducts = products.slice(0, 8);
 
-
-
-  <ListingContainer style={{width: width, gap: gap}}>
-    {products.map((product) => (
-      <ProductCard
-        key={product.id}
-        image={product.image}
-        name={product.name}
-        price={product.price}
-        priceDiscount={product.priceDiscount}
-        subTitle={product.subTitle}
-        percentageDiscount={product.percentageDiscount}
-      />
-    ))}
-  </ListingContainer>
-);
+  return (
+    <ListingContainer style={{ width: width, gap: gap }}>
+      {limitedProducts.map((product) => (
+        <ProductCard
+          key={product.id}
+          image={product.image}
+          name={product.name}
+          price={product.price}
+          priceDiscount={product.priceDiscount}
+          subTitle={product.subTitle}
+          percentageDiscount={product.percentageDiscount}
+        />
+      ))}
+    </ListingContainer>
+  );
+};
 
 export default ProductListing;
