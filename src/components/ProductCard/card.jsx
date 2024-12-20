@@ -6,10 +6,10 @@ import styled from "styled-components";
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  height: 380px;
+  width: 13.8rem;
+  height: 24rem;
   font-family: 'Inter', sans-serif;
-  margin-bottom: 2em;
-  padding: 0;
+  margin: 0px -5px 10px;
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
@@ -21,7 +21,8 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  height: 321px;
+  width: 13.6rem;
+  height: 17em;
   background: #FFFFFF;
   box-shadow: 6px 16px 30px rgba(105, 98, 98, 0.05);
   border-radius: 4px;
@@ -33,18 +34,18 @@ const Image = styled.img`
 `;
 
 const Name = styled.h2`
-  font-weight: 400;
-  font-size: 24px;
+  width: 1em;
+  font-size: 1em;
   letter-spacing: 0.75px;
   color: var(--dark-gray-2);
   white-space: nowrap;        /* Impede a quebra de linha */
-  overflow: hidden;           /* Esconde o excesso de texto */
   text-overflow: ellipsis;    /* Adiciona '...' quando o texto é muito grande */
 
   @media (max-width: 768px) {
     font-size: 14px;          /* Ajusta o tamanho da fonte no mobile */
     width: 100%;              /* Garante que o nome ocupe toda a largura disponível */
-    display: block;           /* Faz o nome ocupar a linha inteira */
+    display: block;
+    overflow: hidden;           /* Faz o nome ocupar a linha inteira */
     max-width: 100%;          /* Limita a largura do nome */
     text-overflow: ellipsis;  /* Garante o truncamento com '...' */
   }
@@ -78,7 +79,7 @@ const SubTitle = styled.h6`
 const PriceContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 5px;
   align-items: center;
 `;
 
@@ -91,7 +92,7 @@ const Price = styled.span`
 const PriceOld = styled.span`
   color: var(--light-gray);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   text-decoration: line-through;
   @media (max-width: 768px) {
     font-size: 16px;
@@ -101,7 +102,7 @@ const PriceOld = styled.span`
 const PriceDiscount = styled.span`
   color: #1F1F1F;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   @media (max-width: 768px) {
     font-size: 16px;
   }
