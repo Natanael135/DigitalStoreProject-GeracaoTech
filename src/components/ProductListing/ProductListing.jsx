@@ -4,9 +4,7 @@ import ProductCard from "../../components/ProductCard/card";
 
 const ListingContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards lado a lado no desktop */
-  gap: 10px;
-  justify-content: center;
+  grid-template-columns: 23% 23% 23% 23%; /* 4 cards lado a lado no desktop */
   padding: 10px;
 
   @media (max-width: 768px) {
@@ -15,8 +13,11 @@ const ListingContainer = styled.div`
 `;
 
 // Componente ProductListing
-const ProductListing = ({ products }) => (
-  <ListingContainer>
+const ProductListing = ({ products, width, gap }) => (
+
+
+
+  <ListingContainer style={{width: width, gap: gap}}>
     {products.map((product) => (
       <ProductCard
         key={product.id}

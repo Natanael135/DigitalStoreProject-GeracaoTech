@@ -94,7 +94,7 @@ const Divider = styled.hr`
 
 const CardContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const FilterIcon = styled.button`
@@ -178,7 +178,7 @@ const ProductListingPage = () => {
           </FilterContainer>
 
           <CardContainer>
-            <ProductListing products={products} />
+            <ProductListing products={products} width="980px" gap="18px"/>
           </CardContainer>
         </Block>
       </ProductListingContainer>

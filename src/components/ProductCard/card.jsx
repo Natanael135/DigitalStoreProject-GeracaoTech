@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Estilização do contêiner
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  width: 292px;
-  height: 439px;
+  height: 380px;
   font-family: 'Inter', sans-serif;
   margin-bottom: 2em;
   padding: 0;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -20,7 +21,6 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 292px;
   height: 321px;
   background: #FFFFFF;
   box-shadow: 6px 16px 30px rgba(105, 98, 98, 0.05);
@@ -110,7 +110,7 @@ const PriceDiscount = styled.span`
 // Componente ProductCard
 const ProductCard = ({ image, name, price, priceDiscount, subTitle, percentageDiscount }) => {
   const [isMobile, setIsMobile] = useState(false);
-
+  let navigate = useNavigate()
   // UseEffect para detectar a largura da tela e definir o estado de isMobile
   useEffect(() => {
     const handleResize = () => {
@@ -138,7 +138,7 @@ const ProductCard = ({ image, name, price, priceDiscount, subTitle, percentageDi
   };
 
   return (
-    <Card>
+    <Card onClick={()=> navigate("/product/1")}>
       <Image src={image} alt={name} />
       {percentageDiscount && <Discount>{percentageDiscount}</Discount>}
       {subTitle && <SubTitle>{subTitle}</SubTitle>}

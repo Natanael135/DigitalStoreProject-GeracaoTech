@@ -69,7 +69,7 @@ background-color: #F9F8FE;
           <FeaturedProducts/>
         
         <Section title="Produtos em alta" link={link}>
-          <ProductListing products={products} />  
+          <ProductListing products={products} width="100%" gap="24px"/>  
         </Section>
       </div>
 

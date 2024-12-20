@@ -110,7 +110,7 @@ const ProdutoContainer = styled.div`
     </section>
 
     <Section title="Produtos relacionados" link={link}>
-      <ProductListing products={products} />
+      <ProductListing products={products} width="100%" gap="24px"/>
     </Section>
 
   </ProdutoContainer>
