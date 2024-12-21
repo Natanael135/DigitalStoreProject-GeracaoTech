@@ -5,22 +5,22 @@
 - Erik Lima do Nascimento
 - Matheus Ferreira Silva Rocha
 
-##Natanael Silveira de Melo
-###Telas:
+## Natanael Silveira de Melo
+### Telas:
 - ProductListingPage;
 - HomePage
-###Components:
+### Components:
 - FeaturedProducts
 - Filter
 - Footer
 - Header
 - Logo
 
-##Matheus Ferreira Silva Rocha: 
-###Telas:
+## Matheus Ferreira Silva Rocha: 
+### Telas:
 - Homepage
 - Tela de detalhes do produto.
-###Componentes:
+### Componentes:
 - Carrossel/Galleria
 - Section
 - BuyBox
@@ -28,6 +28,6 @@
 - ProductOptions
 - SpecialOffer
 
-###Erik Lima do Nascimento:
-###Components:
+### Erik Lima do Nascimento:
+### Components:
 - Cards
