@@ -18,15 +18,15 @@ Components:
 
 Matheus Ferreira Silva Rocha: 
 Telas:
- .Homepage
- .Tela de detalhes do produto.
+- Homepage
+- Tela de detalhes do produto.
 Componentes:
- .Carrossel/Galleria
- .Section
- .BuyBox
- .ProductInfos
- .ProductOptions
- .SpecialOffer
+- Carrossel/Galleria
+- Section
+- BuyBox
+- ProductInfos
+- ProductOptions
+- SpecialOffer
 
 Erik Lima do Nascimento:
 Components:
